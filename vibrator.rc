@@ -1,0 +1,9 @@
+service vibrator /system/bin/vibrator.sh
+    class main
+    user root
+    group root
+    seclabel u:r:init:s0
+    oneshot
+
+on property:sys.boot_completed=1
+    start vibrator
